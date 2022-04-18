@@ -1,16 +1,16 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdk 31
+    compileSdk ConfigData.androidCompileSdk
 
     defaultConfig {
-        minSdk 21
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        minSdk ConfigData.androidMinSdk
+        targetSdk ConfigData.androidTargetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -35,11 +35,14 @@ dependencies {
     implementation project(path: ':domain')
 
 
+    api Libs.roomRxJava
     api Libs.retrofit
 
     api Libs.androidKtx
     api Libs.gson
-    api Libs.rxJava
+    api Libs.room
+    api Libs.roomRxJava
+    kapt Libs.roomCompiler
     implementation Libs.kotlinStdlib
     implementation Libs.javaxInject
     testImplementation Libs.junit
