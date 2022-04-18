@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Book_a_room"
 include ':app'
+include ':data'
+include ':domain'
