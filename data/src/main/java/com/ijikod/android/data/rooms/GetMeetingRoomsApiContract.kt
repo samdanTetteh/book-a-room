@@ -2,7 +2,7 @@ package com.ijikod.android.data.rooms
 
 import com.google.gson.annotations.SerializedName
 
-interface RoomsApiContract {
+interface GetMeetingRoomsApiContract {
 
     data class MeetingRoomsResponse(
         @SerializedName("rooms") val rooms: List<Rooms>
