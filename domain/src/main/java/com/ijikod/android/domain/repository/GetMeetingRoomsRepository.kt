@@ -8,5 +8,5 @@ interface GetMeetingRoomsRepository {
 
     fun loadMeetingRooms(): Completable
 
-    fun getMeetingRooms(): Observable<MeetingRoom>
+    fun getMeetingRooms(): Observable<List<MeetingRoom>>
 }

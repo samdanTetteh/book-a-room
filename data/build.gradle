@@ -41,7 +41,6 @@ dependencies {
     api Libs.androidKtx
     api Libs.gson
     api Libs.room
-    api Libs.roomRxJava
     kapt Libs.roomCompiler
     implementation Libs.kotlinStdlib
     implementation Libs.javaxInject

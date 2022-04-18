@@ -89,47 +89,66 @@ dependencies {
     implementation project(path: ':domain')
     implementation project(path: ':data')
 
+    implementation Libs.androidKtx
     implementation Libs.appCompat
     implementation Libs.materialDesign
+    implementation Libs.constraintLayout
+    implementation Libs.recyclerView
     implementation Libs.androidHilt
-
-    implementation Libs.navigationFragmentKtx
-    implementation Libs.navigationUIKtx
-    implementation Libs.fragment
     implementation Libs.lifeCycle
-    implementation Libs.cardView
-
+    implementation Libs.retrofit
+    implementation Libs.okHttp
+    implementation Libs.gson
     implementation Libs.rxJava
     implementation Libs.rxRelay
     implementation Libs.rxAndroid
-    implementation Libs.androidKtx
-    implementation Libs.androidHilt
+    implementation Libs.rxBindings
+    implementation Libs.retrofitRxAdapter
+    implementation Libs.navigationFragmentKtx
+    implementation Libs.navigationUIKtx
+    implementation Libs.fragment
+    implementation Libs.picasso
+    implementation Libs.espressoIdleResource
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Dependencies for local unit tests
     testImplementation Libs.junit
+    testImplementation Libs.androidArchCoreTesting
+    testImplementation Libs.robolectric
     testImplementation Libs.navigationTesting
+    testImplementation Libs.espressoTest
+    testImplementation Libs.espressoIntents
+    testImplementation Libs.espressoTestContrib
+    testImplementation Libs.googleTruth
+    testImplementation Libs.mockito
 
     kapt  Libs.hiltAndroidCompiler
 
     // Instrumentation Tests
     debugImplementation Libs.fragmentTesting
     kaptAndroidTest  Libs.hiltAndroidCompiler
-    androidTestImplementation Libs.junit
     androidTestImplementation Libs.androidTestCore
+    androidTestImplementation Libs.junit
     androidTestImplementation Libs.androidJunitTest
+    androidTestImplementation Libs.mockitoAndroid
     androidTestImplementation Libs.androidArchCoreTesting
     androidTestImplementation Libs.androidxTestCore
     androidTestImplementation Libs.androidxTestRunner
     androidTestImplementation Libs.androidxTestRules
-    androidTestImplementation Libs.espressoTest
     androidTestImplementation Libs.navigationTesting
-    androidTestImplementation Libs.hiltTesting
     androidTestImplementation Libs.espressoTest
     androidTestImplementation Libs.espressoIntents
+    androidTestImplementation Libs.hiltTesting
+    androidTestImplementation Libs.mockWebServer
+    androidTestImplementation Libs.okHttpIdleResource
+    androidTestImplementation Libs.roomTesting
     androidTestImplementation (Libs.espressoTestContrib){
         exclude group: 'com.android.support', module: 'appcompat'
         exclude module: 'recyclerview-v7'
         exclude module: 'appcompat-v7'
     }
+
+
+    testImplementation Libs.mockitoKotlin
+    testImplementation Libs.mockK
 }
