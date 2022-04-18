@@ -8,7 +8,7 @@ import com.ijikod.android.data.rooms.entities.RoomEntity
 import io.reactivex.Observable
 
 @Dao
-abstract class RoomsDoa: EntityBaseDao<RoomEntity> {
+abstract class RoomsDao: EntityBaseDao<RoomEntity> {
 
     @Transaction
     @Query("SELECT * FROM rooms")
@@ -18,8 +18,8 @@ abstract class RoomsDoa: EntityBaseDao<RoomEntity> {
     @Query("DELETE FROM rooms")
     abstract fun deleteAllRooms()
 
-    @Query("INSERT INTO rooms VALUES (:spot)")
-    abstract fun insertAvailableRoomSpots(spot: Int)
+    @Query("UPDATE rooms SET spots = :spots WHERE id = :id")
+    abstract fun updateAvailableRoomSpots(id:Int, spots: Int)
 
     fun deleteAndInsert(roomsEntity: RoomEntity) {
         deleteAllRooms()
