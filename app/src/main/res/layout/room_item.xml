@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:background="@color/black"
+            tools:background="@color/black"
             android:contentDescription="@string/room_image" />
 
     </androidx.cardview.widget.CardView>
@@ -41,7 +41,8 @@
         app:layout_constraintBottom_toTopOf="@id/room_spots_txt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/room_image_holder"
-        tools:text="Lorem ipsum" />
+        tools:text="Lorem ipsum"
+        android:text="@string/room_name_txt"/>
 
     <TextView
         android:id="@+id/room_spots_txt"

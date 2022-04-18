@@ -4,11 +4,12 @@ import com.ijikod.android.data.rooms.entities.RoomEntity
 import com.ijikod.android.domain.entity.MeetingRoom
 
 fun GetMeetingRoomsApiContract.MeetingRoomsResponse.toEntity(): List<RoomEntity> {
-     return this.rooms.map {
+     return this.rooms.mapIndexed { index, value ->
          RoomEntity(
-             name = it.name,
-             spots = it.spots,
-             image = it.thumbnail
+             id = index,
+             name = value.name,
+             spots = value.spots,
+             image = value.thumbnail
          )
      }
 }

@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/meetingRoomsFragment"
         android:name="com.ijikod.android.book_a_room.meetingRooms.ui.MeetingRoomsFragment"
-        android:label="fragment_meeting_rooms"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_meeting_rooms" />
 </navigation>

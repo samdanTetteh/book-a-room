@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">Book_a_room</string>
+    <string name="app_name">Book a room</string>
 
     <string name="fragment_rooms_subtext">Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolar ultricies donec risus sodales. Tempus quis et.</string>
     <string name="room_image">meeting_room_image</string>
     <string name="book_btn_txt">Book!</string>
     <string name="remaining_spots_txt">%1d spots remaining</string>
+    <string name="room_name_txt">Lorem ipsum</string>
 
 </resources>

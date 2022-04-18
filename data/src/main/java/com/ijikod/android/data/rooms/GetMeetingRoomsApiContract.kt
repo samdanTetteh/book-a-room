@@ -11,6 +11,6 @@ interface GetMeetingRoomsApiContract {
     data class Rooms(
         @SerializedName("name") val name: String,
         @SerializedName("spots") val spots: Int,
-        @SerializedName("image") val thumbnail: String
+        @SerializedName("thumbnail") val thumbnail: String
     )
 }

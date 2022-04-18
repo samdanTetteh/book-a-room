@@ -13,7 +13,7 @@ class GetAllMeetingRoomsUseCase @Inject constructor(
         return repository.loadMeetingRooms()
     }
 
-    fun getAllMeetingRooms(): Observable<MeetingRoom> {
+    fun getAllMeetingRooms(): Observable<List<MeetingRoom>> {
         return repository.getMeetingRooms()
     }
 }
