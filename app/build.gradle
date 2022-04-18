@@ -97,12 +97,14 @@ dependencies {
     implementation Libs.navigationUIKtx
     implementation Libs.fragment
     implementation Libs.lifeCycle
+    implementation Libs.cardView
 
     implementation Libs.rxJava
     implementation Libs.rxRelay
     implementation Libs.rxAndroid
     implementation Libs.androidKtx
     implementation Libs.androidHilt
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Dependencies for local unit tests
     testImplementation Libs.junit

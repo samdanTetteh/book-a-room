@@ -18,6 +18,7 @@ object Versions {
     const val lifeCycle = "2.2.0"
     const val recyclerView = "1.2.1"
     const val fragmentX = "1.4.0"
+    const val cardViewX = "1.0.0"
 
 
     // Dagger Hilt

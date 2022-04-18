@@ -44,6 +44,7 @@ object Libs {
     const val androidHilt = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
 
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragmentX}"
+    const val cardView = "androidx.cardview:cardview:${Versions.cardViewX}"
 
     const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUIKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
