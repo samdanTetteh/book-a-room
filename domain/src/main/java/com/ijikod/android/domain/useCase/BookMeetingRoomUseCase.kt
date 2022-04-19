@@ -13,6 +13,6 @@ class BookMeetingRoomUseCase @Inject constructor(private val repository: BookMee
     }
 
     fun updateMeetingRoomSpots(id: Int, spots: Int): Completable {
-        return repository.updateBookedMeetingRoomSpots(id, spots)
+        return repository.updateBookedMeetingRoomSpots(id, spots.minus(1))
     }
 }

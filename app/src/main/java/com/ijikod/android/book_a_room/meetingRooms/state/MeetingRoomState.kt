@@ -15,4 +15,10 @@ data class MeetingRoomState(
         get() = if (allMeetingRooms is AsyncResult.Success && allMeetingRooms.data != null) {
             allMeetingRooms.data
         } else null
+
+
+    val getBookedRoomStatus: BookedMeetingRoom?
+        get() = if (bookedMeetingRoom is AsyncResult.Success && bookedMeetingRoom.data != null) {
+            bookedMeetingRoom.data
+        }else null
 }

@@ -6,8 +6,9 @@ import com.ijikod.android.domain.entity.BookedMeetingRoom
 import com.ijikod.android.domain.repository.BookMeetingRoomRepository
 import io.reactivex.Completable
 import io.reactivex.Single
+import javax.inject.Inject
 
-class BookingMeetingRoomImpl(
+class BookingMeetingRoomImpl @Inject constructor(
     private val remote: RoomsRemoteApi,
     private val local: RoomsDao
 ): BookMeetingRoomRepository {

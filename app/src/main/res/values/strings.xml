@@ -7,4 +7,6 @@
     <string name="remaining_spots_txt">%1d spots remaining</string>
     <string name="room_name_txt">Lorem ipsum</string>
 
+    <string name="room_booked_txt">Room booked Successfully</string>
+
 </resources>

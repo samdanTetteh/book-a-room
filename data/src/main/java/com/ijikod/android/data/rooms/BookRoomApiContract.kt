@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 interface BookRoomApiContract {
 
     data class BookRoomResponse(
-        @SerializedName("success") val success: String
+        @SerializedName("success") val success: Boolean
     )
 }

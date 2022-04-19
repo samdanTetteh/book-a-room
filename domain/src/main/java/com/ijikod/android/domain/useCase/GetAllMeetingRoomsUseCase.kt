@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GetAllMeetingRoomsUseCase @Inject constructor(
     private val repository: GetMeetingRoomsRepository) {
 
-    operator fun invoke(): Completable {
+     fun getRoomsFromRemote(): Completable {
         return repository.loadMeetingRooms()
     }
 

@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.ijikod.android.book_a_room.R
 import com.ijikod.android.book_a_room.databinding.FragmentMeetingRoomsBinding
 import com.ijikod.android.book_a_room.meetingRooms.adapter.MeetingRoomsAdapter
 import com.ijikod.android.book_a_room.meetingRooms.common.AutoCompositeDisposable
@@ -54,8 +56,8 @@ class MeetingRoomsFragment : Fragment() {
             .subscribe{ event ->
 
                 if (event is MeetingRoomsEvents.Error) {
-                    event.error.message?.let { errorMsg ->
-
+                    event.error.message?.let {
+                        Toast.makeText(context, it, Toast.LENGTH_LONG).show()
                     }
                 }
 
@@ -65,11 +67,19 @@ class MeetingRoomsFragment : Fragment() {
                          listAdapter.notifyDataSetChanged()
                      }
                 }
+
+                if (event is MeetingRoomsEvents.BookedMeetingRoom) {
+                    event.state.getBookedRoomStatus?.let {
+                        if (it.success){
+                            Toast.makeText(context, getString(R.string.room_booked_txt), Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
             }.addTo(disposable)
     }
 
-    private fun bookRoom(spots: Int){
-
+    private fun bookRoom(bookedRoomData: Pair<Int, Int>){
+        viewModel.bookMeetingRoom(bookedRoomData.first, bookedRoomData.second)
     }
 
 
