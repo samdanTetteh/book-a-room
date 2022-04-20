@@ -15,12 +15,11 @@
 - Flat layout hierarchy (with [Constraint layouts](https://developer.android.com/jetpack/androidx/releases/constraintlayout))
 - Multi Screen Segmentation (with [Fragments](https://developer.android.com/jetpack/androidx/releases/fragment))
 - Navigation (with [Navigation Library](https://developer.android.com/guide/navigation/navigation-migrate))
-- Android lifecyle aware components (with [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle))
+- Android lifecycle aware components (with [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle))
 - Fluid list loading (with [Recycler View](https://developer.android.com/jetpack/androidx/releases/recyclerview))
 - Data Persistence (with [Room](https://developer.android.com/jetpack/androidx/releases/room))
 - Data surviving configuration changes (with [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel))
 - Type safe dependency management (with [Kotlin DSL](https://kotlinlang.org/docs/type-safe-builders.html))
-- Android architecture components to share ViewModels during configuration changes
 
 
 # Getting started
@@ -33,13 +32,14 @@
 # Notes
 - Book a room has offline support. Data is retrieved from remote when data is established and saved.
 
-# Future Improvements
-- Network notification when data is restored.
-- Make UI Improvements and possibly introducing [compose](https://developer.android.com/jetpack/androidx/releases/compose)
-- Introduce some nice error pages and not rely on toasts.
-
-# Issues faced
-- Run out of time to implement all that was needed. With more time I would have implemented more instrumentation test the fragments and unit tests for data repositories and viewModels
-- added filtering options for meeting rooms 
-
-
+# Improvements
+- Improve single source of truth implementation (At the moment the rooms list is being persisted locally after data is 
+  retrieved from the remote however is everytime the app starts the remote still call even thought some data is saved.)
+- Make sure application UI supports Dark Theme entirely.
+- Improve room booking (The the moment the app is still calling the remote to book a room while offline, this does not give a realistic view on the spots for a given room)
+- Network notification when data connection is restored while offline.
+- I would have loved to use [compose](https://developer.android.com/jetpack/androidx/releases/compose) for the UI.
+- Introduce error pages and not rely on toasts messages for better UI error handling. 
+- With more time I would have liked to implemented more instrumentation tests and unit tests for the data repositories.
+- Include place holder images for meeting rooms
+- Improve how data is handled from remote when the expected data is not returned from remote.
