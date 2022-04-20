@@ -2,9 +2,10 @@ package com.ijikod.android.data.rooms
 
 import com.ijikod.android.data.rooms.api.RoomsRemoteApi
 import com.ijikod.android.data.rooms.dao.RoomsDao
+import com.ijikod.android.data.rooms.entities.RoomEntity
 import com.ijikod.android.domain.entity.BookedMeetingRoom
+import com.ijikod.android.domain.entity.MeetingRoom
 import com.ijikod.android.domain.repository.BookMeetingRoomRepository
-import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -21,7 +22,7 @@ class BookingMeetingRoomImpl @Inject constructor(
         }
     }
 
-    override fun updateBookedMeetingRoomSpots(id: Int, spots: Int): Completable {
-        return local.updateAvailableRoomSpots(id, spots)
+    override fun updateBookedMeetingRoomSpots(room: MeetingRoom): Int {
+        return local.update(room.toEntity())
     }
 }

@@ -15,7 +15,7 @@ android {
         versionCode ConfigData.versionCode
         versionName ConfigData.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.ijikod.android.book_a_room.CustomTestRunner"
     }
 
     buildTypes {

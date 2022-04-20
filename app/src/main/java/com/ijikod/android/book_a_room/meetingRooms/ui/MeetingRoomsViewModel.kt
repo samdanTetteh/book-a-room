@@ -6,6 +6,7 @@ import com.ijikod.android.book_a_room.meetingRooms.common.RxViewModelStore
 import com.ijikod.android.book_a_room.meetingRooms.common.mapToAsyncResult
 import com.ijikod.android.book_a_room.meetingRooms.state.MeetingRoomState
 import com.ijikod.android.book_a_room.meetingRooms.state.MeetingRoomsEvents
+import com.ijikod.android.domain.entity.MeetingRoom
 import com.ijikod.android.domain.useCase.BookMeetingRoomUseCase
 import com.ijikod.android.domain.useCase.GetAllMeetingRoomsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -45,7 +46,7 @@ class MeetingRoomsViewModel @Inject constructor(
 
     }
 
-    fun bookMeetingRoom(id: Int, spots:Int){
+    fun bookMeetingRoom(room: MeetingRoom){
         bookMeetingRoomUseCase.invoke()
             .mapToAsyncResult()
             .subscribeOn(Schedulers.io())
@@ -53,7 +54,7 @@ class MeetingRoomsViewModel @Inject constructor(
                 if (result is AsyncResult.Error) {
                     publish(MeetingRoomsEvents.Error(result.error))
                 } else {
-                    bookMeetingRoomUseCase.updateMeetingRoomSpots(id, spots)
+                    bookMeetingRoomUseCase.updateMeetingRoomSpots(room.copy(spots = room.spots.minus(1)))
                     applyState(Reducer { currentState().copy(bookedMeetingRoom = result) })
                     publish(MeetingRoomsEvents.BookedMeetingRoom(currentState()))
                 }

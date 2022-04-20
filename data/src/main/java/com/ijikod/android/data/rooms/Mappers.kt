@@ -25,3 +25,12 @@ fun List<RoomEntity>.toDomain(): List<MeetingRoom> {
         )
     }
 }
+
+fun MeetingRoom.toEntity(): RoomEntity {
+    return RoomEntity (
+            id = this.id,
+            name = this.name,
+            spots = this.spots,
+            image = this.image
+        )
+}

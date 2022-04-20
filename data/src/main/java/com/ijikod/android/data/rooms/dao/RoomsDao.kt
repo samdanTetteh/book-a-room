@@ -7,6 +7,7 @@ import com.ijikod.android.data.common.EntityBaseDao
 import com.ijikod.android.data.rooms.entities.RoomEntity
 import io.reactivex.Completable
 import io.reactivex.Observable
+import io.reactivex.Single
 
 @Dao
 abstract class RoomsDao: EntityBaseDao<RoomEntity> {
@@ -18,9 +19,6 @@ abstract class RoomsDao: EntityBaseDao<RoomEntity> {
 
     @Query("DELETE FROM rooms")
     abstract fun deleteAllRooms()
-
-    @Query("UPDATE rooms SET spots = :spots WHERE id = :id")
-    abstract fun updateAvailableRoomSpots(id:Int, spots: Int): Completable
 
     fun deleteAndInsert(roomsEntity: List<RoomEntity>) {
         deleteAllRooms()

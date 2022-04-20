@@ -13,6 +13,7 @@ import com.ijikod.android.book_a_room.meetingRooms.adapter.MeetingRoomsAdapter
 import com.ijikod.android.book_a_room.meetingRooms.common.AutoCompositeDisposable
 import com.ijikod.android.book_a_room.meetingRooms.common.addTo
 import com.ijikod.android.book_a_room.meetingRooms.state.MeetingRoomsEvents
+import com.ijikod.android.domain.entity.MeetingRoom
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -78,8 +79,8 @@ class MeetingRoomsFragment : Fragment() {
             }.addTo(disposable)
     }
 
-    private fun bookRoom(bookedRoomData: Pair<Int, Int>){
-        viewModel.bookMeetingRoom(bookedRoomData.first, bookedRoomData.second)
+    private fun bookRoom(bookedRoomData: MeetingRoom){
+        viewModel.bookMeetingRoom(bookedRoomData)
     }
 
 

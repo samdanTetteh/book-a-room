@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ijikod.android.book_a_room">
+
+    <application>
+        <activity
+            android:name="com.ijikod.book_a_room.HiltTestActivity"
+            android:exported="false"  />
+    </application>
+
+</manifest>
